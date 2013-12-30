@@ -29,8 +29,18 @@ cas.validate(ticket, function(err, username) {
 ```
 
 If you're using gatech's cas service, the ticket can be found using the following steps:
-1) go to the url using the format: https://login.gatech.edu/cas?service=:servicename, eg: ```https://login.gatech.edu/cas?service=http://gatech.edu```
-2) Enter your gatech login credentials, and you'll be redirected to the service page.  Appenened to the end of the url will be ?ticket=:ticket  eg: ```http://gatech.edu?ticket=ST-31352479-Lq2lf234520bFkgzjhwm-cas1.oit.gatech.edu```
+
+1) go to the url using the format: https://login.gatech.edu/cas?service=:servicename
+
+Example: ```https://login.gatech.edu/cas?service=http://gatech.edu```
+
+
+2) Enter your gatech login credentials, and you'll be redirected to the service page. 
+
+3) Appenened to the end of the url will be ?ticket=:ticket 
+
+Example: ```http://gatech.edu?ticket=ST-31352479-Lq2lf234520bFkgzjhwm-cas1.oit.gatech.edu```
+
 
 From my own testing with gatech's implementation, it seems that each ticket can only be parsed to a username once.  If you don't want to constantly re-loged the user using CAS, you'll need to use a library such-as [node-client-sessions](https://github.com/mozilla/node-client-sessions).
 
